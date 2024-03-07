@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/configs/themes/color_theme.dart';
 
 class CardWidget extends StatelessWidget {
   final String title;
@@ -10,13 +11,21 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: ColorsThemes().white,
       child: GestureDetector(
         onTap: onTap,
-        child: Column(
-          children: [
-            Image(image: image),
-            Text(title),
-          ],
+        child: Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image(
+                image: image,
+                width: 30,
+              ),
+              Text(title),
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,5 @@
 {
-  "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "json.schemas": [],
+  "cmake.sourceDirectory": "/Users/somaly/Desktop/My Project/testapp/linux/flutter"
 }
