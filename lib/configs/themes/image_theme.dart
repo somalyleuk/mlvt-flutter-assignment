@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 class ImageThemes {
-  final image1 = const AssetImage('assets/question-answer.png');
+  final image1 = const AssetImage('assets/images/question-answer.png');
 }

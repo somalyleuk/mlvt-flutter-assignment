@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:testapp/data/api_service.dart';
 import 'package:testapp/models/faqs_model/questions_model.dart';
 
-class ApiController extends GetxController {
+class QuestionController extends GetxController {
   var questions = <QuestionModel>[].obs;
 
   @override
