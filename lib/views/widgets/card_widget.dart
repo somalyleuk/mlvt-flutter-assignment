@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:testapp/configs/themes/color_theme.dart';
 import 'package:testapp/configs/themes/text_theme.dart';
 
 class CardWidget extends StatelessWidget {
   final String title;
-  final Widget image;
+  final String svgPath;
   final void Function()? onTap;
-  const CardWidget(
-      {super.key, required this.title, required this.image, this.onTap});
+  const CardWidget({
+    super.key,
+    required this.title,
+    this.onTap,
+    required this.svgPath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +21,15 @@ class CardWidget extends StatelessWidget {
       child: Card(
         color: ColorsThemes().white,
         child: Container(
-          width: 120,
-          height: 500,
           padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              image,
+              SvgPicture.asset(
+                svgPath,
+                width: 50,
+                height: 50,
+              ),
               const SizedBox(height: 20),
               Text(
                 title,

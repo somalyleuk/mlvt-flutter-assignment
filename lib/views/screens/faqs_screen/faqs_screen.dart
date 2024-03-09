@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:testapp/configs/themes/color_theme.dart';
 import 'package:testapp/configs/themes/text_theme.dart';
@@ -17,6 +18,14 @@ class _FAQSScreenState extends State<FAQSScreen> {
   final CategoriesController categoriesController =
       Get.put(CategoriesController());
   final QuestionController questionController = Get.put(QuestionController());
+  final List<String> svgUrls = [
+    'assets/images/1790860289024690.svg',
+    'assets/images/1790856818251272.svg',
+    'assets/images/1790857435835753.svg',
+    'assets/images/1790868118554426.svg',
+    'assets/images/1790864271401405.svg',
+    'assets/images/1790864316048429.svg',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +35,11 @@ class _FAQSScreenState extends State<FAQSScreen> {
           icon: Icon(
             Icons.arrow_back_ios_new,
             color: ColorsThemes().white,
-          ), // Custom icon color
-          // onPressed: () => Navigator.of(context).pop(),
-          onPressed: () => Get.back(closeOverlays: true),
+          ),
+          onPressed: () {
+            // Navigator.pop(context);
+            Navigator.of(context, rootNavigator: true).pop(context);
+          },
         ),
         title: const Text('សំណួរ និង ចម្លើយ'),
         centerTitle: false,
@@ -40,7 +51,6 @@ class _FAQSScreenState extends State<FAQSScreen> {
         child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Obx(() {
                 if (categoriesController.categories.isEmpty) {
@@ -54,17 +64,15 @@ class _FAQSScreenState extends State<FAQSScreen> {
                       crossAxisCount: 3,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
+                      childAspectRatio: 0.7,
                     ),
                     itemCount: categoriesController.categories.length,
                     itemBuilder: (context, index) {
+                      final svgUrl = svgUrls[index % svgUrls.length];
                       final category = categoriesController.categories[index];
                       return CardWidget(
-                        image: Image.network(
-                          'http://128.199.167.207:3838/api/v01/faqs/categories/dashboard/${category.icon}',
-                          width: 30,
-                          height: 30,
-                        ),
                         title: category.name,
+                        svgPath: svgUrl,
                       );
                     },
                   );
@@ -74,7 +82,7 @@ class _FAQSScreenState extends State<FAQSScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'សំណួរ ពេញនិយម',
@@ -85,7 +93,7 @@ class _FAQSScreenState extends State<FAQSScreen> {
               ),
               Obx(() {
                 if (questionController.questions.isEmpty) {
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center();
                 } else {
                   return ListView.builder(
                     shrinkWrap: true,
@@ -123,34 +131,25 @@ class _FAQSScreenState extends State<FAQSScreen> {
   }
 
   void _showBottomSheet(BuildContext context, String title) {
-    setState(() {
-      showModalBottomSheet(
-        context: context,
-        isScrollControlled: true,
-        // useSafeArea: true,
-        showDragHandle: true,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
-          ),
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
         ),
-        builder: (BuildContext context) {
-          return SingleChildScrollView(
-            controller: ScrollController(),
-            scrollDirection: Axis.vertical,
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: double.infinity,
-              child: Text(
-                title,
-                style: TextThemes.listTextStyle,
-              ),
-            ),
-          );
-        },
-      );
-    });
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.5,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: SingleChildScrollView(
+            child: Html(data: title),
+          ),
+        );
+      },
+    );
   }
 }
