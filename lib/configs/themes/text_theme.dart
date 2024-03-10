@@ -9,13 +9,13 @@ class TextThemes {
   );
 
   static final TextStyle headingTextStyle = TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     color: ColorsThemes().darkBlue,
     fontFamily: 'khMuollight',
   );
 
   static final TextStyle cardTextStyle = TextStyle(
-    fontSize: 12,
+    fontSize: 10,
     color: Colors.black87,
     fontFamily: 'khBattambang',
   );
