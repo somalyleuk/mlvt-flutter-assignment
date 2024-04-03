@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:testapp/configs/themes/color_theme.dart';
 import 'package:testapp/configs/themes/image_theme.dart';
 import 'package:testapp/configs/themes/text_theme.dart';
-import 'package:testapp/views/screens/faqs_screen/faqs_screen.dart';
+import 'package:testapp/presentation/views/faqs_view/faqs_view.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FAQSScreen(),
+                builder: (context) => const FAQSView(),
               ),
             );
           },

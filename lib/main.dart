@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:testapp/configs/routes/app_router.dart';
+import 'package:testapp/configs/router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialRoute: AppRouter.initialRoute,
-      getPages: AppRouter.router,
-      unknownRoute: AppRouter.unknownRoute,
+      getPages: router,
+      unknownRoute: AppRouter.unknow,
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
         breakpoints: [

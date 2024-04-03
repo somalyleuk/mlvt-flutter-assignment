@@ -3,18 +3,18 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:testapp/configs/themes/color_theme.dart';
 import 'package:testapp/configs/themes/text_theme.dart';
-import 'package:testapp/controllers/categories_controller.dart';
-import 'package:testapp/controllers/question_controller.dart';
-import 'package:testapp/views/widgets/card_widget.dart';
+import 'package:testapp/presentation/controllers/categories_controller.dart';
+import 'package:testapp/presentation/controllers/question_controller.dart';
+import 'package:testapp/presentation/widgets/card_widget.dart';
 
-class FAQSScreen extends StatefulWidget {
-  const FAQSScreen({super.key});
+class FAQSView extends StatefulWidget {
+  const FAQSView({super.key});
 
   @override
-  State<FAQSScreen> createState() => _FAQSScreenState();
+  State<FAQSView> createState() => _FAQSViewState();
 }
 
-class _FAQSScreenState extends State<FAQSScreen> {
+class _FAQSViewState extends State<FAQSView> {
   final CategoriesController categoriesController =
       Get.put(CategoriesController());
   final QuestionController questionController = Get.put(QuestionController());

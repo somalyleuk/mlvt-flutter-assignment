@@ -26,3 +26,7 @@ class TextThemes {
     fontFamily: 'khBattambang',
   );
 }
+
+TextTheme textStyle = const TextTheme(
+  displaySmall: TextStyle(fontSize: 30),
+);
