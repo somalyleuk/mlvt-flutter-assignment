@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/configs/themes/color_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/color_theme.dart';
 
 class TextThemes {
   static final TextStyle appBarTextStyle = TextStyle(
@@ -26,7 +26,3 @@ class TextThemes {
     fontFamily: 'khBattambang',
   );
 }
-
-TextTheme textStyle = const TextTheme(
-  displaySmall: TextStyle(fontSize: 30),
-);

@@ -1,6 +1,6 @@
 {
-    "name": "testapp",
-    "short_name": "testapp",
+    "name": "mlvt_flutter_assignment",
+    "short_name": "mlvt_flutter_assignment",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

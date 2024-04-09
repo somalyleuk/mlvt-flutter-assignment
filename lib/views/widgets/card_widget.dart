@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:testapp/configs/themes/color_theme.dart';
-import 'package:testapp/configs/themes/text_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/color_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/text_theme.dart';
 
 class CardWidget extends StatelessWidget {
   final String title;

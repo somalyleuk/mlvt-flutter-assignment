@@ -21,18 +21,18 @@
         },
 
         {
-            "name": "testapp",
+            "name": "mlvt_flutter_assignment",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "testapp (profile mode)",
+            "name": "mlvt_flutter_assignment (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "testapp (release mode)",
+            "name": "mlvt_flutter_assignment (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UnknownView extends StatelessWidget {
-  const UnknownView({super.key});
+class Unknown extends StatelessWidget {
+  const Unknown({super.key});
 
   @override
   Widget build(BuildContext context) {

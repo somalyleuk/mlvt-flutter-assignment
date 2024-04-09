@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:testapp/utils/constants/env.dart';
+import 'package:mlvt_flutter_assignment/configs/env.dart';
 
 class ApiService {
   static Future<Map<String, dynamic>> fetchData() async {

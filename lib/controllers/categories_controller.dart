@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:testapp/domain/repositories/api_service.dart';
-import 'package:testapp/domain/models/faqs_model/categories_model.dart';
+import 'package:mlvt_flutter_assignment/models/faqs_model/categories_model.dart';
+import 'package:mlvt_flutter_assignment/service/api_service.dart';
 
 class CategoriesController extends GetxController {
   var categories = <CategoryModel>[].obs;

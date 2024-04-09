@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
-import 'package:testapp/configs/themes/color_theme.dart';
-import 'package:testapp/configs/themes/text_theme.dart';
-import 'package:testapp/presentation/controllers/categories_controller.dart';
-import 'package:testapp/presentation/controllers/question_controller.dart';
-import 'package:testapp/presentation/widgets/card_widget.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/color_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/text_theme.dart';
+import 'package:mlvt_flutter_assignment/controllers/categories_controller.dart';
+import 'package:mlvt_flutter_assignment/controllers/question_controller.dart';
+import 'package:mlvt_flutter_assignment/views/widgets/card_widget.dart';
 
-class FAQSView extends StatefulWidget {
-  const FAQSView({super.key});
+class FAQSScreen extends StatefulWidget {
+  const FAQSScreen({super.key});
 
   @override
-  State<FAQSView> createState() => _FAQSViewState();
+  State<FAQSScreen> createState() => _FAQSScreenState();
 }
 
-class _FAQSViewState extends State<FAQSView> {
+class _FAQSScreenState extends State<FAQSScreen> {
   final CategoriesController categoriesController =
       Get.put(CategoriesController());
   final QuestionController questionController = Get.put(QuestionController());

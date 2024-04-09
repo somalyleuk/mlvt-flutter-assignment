@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/configs/themes/color_theme.dart';
-import 'package:testapp/configs/themes/image_theme.dart';
-import 'package:testapp/configs/themes/text_theme.dart';
-import 'package:testapp/presentation/views/faqs_view/faqs_view.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/color_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/image_theme.dart';
+import 'package:mlvt_flutter_assignment/configs/themes/text_theme.dart';
+import 'package:mlvt_flutter_assignment/views/screens/faqs_screen/faqs_screen.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FAQSView(),
+                builder: (context) => const FAQSScreen(),
               ),
             );
           },
